@@ -1,15 +1,12 @@
-{
+module.exports = {
   "branchPrefix": "renovate/",
   "dryRun": false,
   "username": "sidey79-self-hosted-renovate[bot]",
   "gitAuthor": "Self-hosted Renovate Bot <123456+sidey-self-hosted-renovate[bot]@users.noreply.github.enterprise.com>",
-  "repositories": [
-    "sidey79/caddy-rproxy",
-    "sidey79/renovateBot"
-  ],
-  "onboarding": false,
+  "onboarding": true,
   "platform": "github",
   "includeForks": true,
+  "autodiscover": true,
   "packageRules": [
     {
       "description": "lockFileMaintenance",
@@ -25,7 +22,7 @@
       "stabilityDays": 0
     }
   ]
-}
+};
 
 
 
