@@ -1,4 +1,4 @@
-{
+module.exports = {
   "branchPrefix": "renovate/",
   "dryRun": false,
   "username": "sidey79-self-hosted-renovate[bot]",
@@ -22,7 +22,7 @@
       "stabilityDays": 0
     }
   ]
-}
+};
 
 
 
