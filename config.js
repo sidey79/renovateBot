@@ -20,6 +20,11 @@ module.exports = {
       ],
       "dependencyDashboardApproval": false,
       "stabilityDays": 0
+    },
+    {
+      "description": "Linuxserver IO",
+      "packagePatterns": ["^(gh|ls)cr.io\\/linuxserver\\/"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)-ls(?<revision>\\d+)$"
     }
   ]
 };
