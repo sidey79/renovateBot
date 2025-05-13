@@ -25,6 +25,11 @@ module.exports = {
       "description": "Linuxserver IO",
       "packagePatterns": ["^(gh|ls)cr.io\\/linuxserver\\/"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)-ls(?<revision>\\d+)$"
+    },
+    {
+      "description": "Linuxserver IO openssh",
+      "matchPackageNames": ["^(gh|ls)cr.io\\/linuxserver\\/openssh-server\\/"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)_p(?<patch>\\d+)-r(?<build>\\d)-ls(?<revision>.+)$"
     }
   ]
 };
