@@ -5,8 +5,11 @@ on:
     # The "*" (#42, asterisk) character has special semantics in YAML, so this
     # string has to be quoted.
     - cron: '11 13 * * *'
+
 jobs:
   renovate:
+    env:
+      RENOVATE_LOG_LEVEL: ${{ vars.LOG_LEVEL }}
     runs-on: ubuntu-latest
     steps:
       - name: Get token
