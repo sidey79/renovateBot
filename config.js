@@ -7,6 +7,7 @@ module.exports = {
   "platform": "github",
   "includeForks": true,
   "autodiscover": true,
+  "platformAutomerge": false,
   "packageRules": [
     {
       "description": "lockFileMaintenance",
