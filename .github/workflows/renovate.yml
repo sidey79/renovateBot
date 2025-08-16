@@ -5,6 +5,7 @@ on:
     # The "*" (#42, asterisk) character has special semantics in YAML, so this
     # string has to be quoted.
     - cron: '11 13 * * *'
+  pull_request:
 
 jobs:
   renovate:
@@ -28,3 +29,5 @@ jobs:
           configurationFile: config.js
           token: '${{ steps.get_token.outputs.token }}'
           env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL)$"
+        env:
+          RENOVATE_DRY_RUN: ${{ github.event_name == 'pull_request' && 'full' || '' }}

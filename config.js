@@ -1,6 +1,6 @@
 module.exports = {
   "branchPrefix": "renovate/",
-  "dryRun": false,
+  "configMigration" : true,
   "username": "sidey79-self-hosted-renovate[bot]",
   "onboarding": true,
   "platform": "github",
