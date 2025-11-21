@@ -21,7 +21,7 @@ jobs:
           app_id: ${{ secrets.app_id }}
 
       - name: Checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.0
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@ea850436a5fe75c0925d583c7a02c60a5865461d # v43.0.20
