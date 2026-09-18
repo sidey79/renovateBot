@@ -18,7 +18,10 @@ jobs:
         uses: actions/create-github-app-token@v3
         with:
           private-key: ${{ secrets.private_key }}
-          app-id: ${{ secrets.app_id }}
+          # 'app-id' ist deprecated. GitHub akzeptiert im JWT-Issuer sowohl die
+          # App ID als auch die Client ID, deshalb bleibt das bestehende Secret
+          # hier stehen; es ist kein neues Secret noetig.
+          client-id: ${{ secrets.app_id }}
           owner: ${{ github.repository_owner }}
 
       - name: Checkout
