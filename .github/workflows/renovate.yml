@@ -2,9 +2,10 @@ name: Renovate
 on:
   workflow_dispatch:
   schedule:
-    # The "*" (#42, asterisk) character has special semantics in YAML, so this
-    # string has to be quoted.
-    - cron: '11 13 * * *'
+    - cron: '30 15 * * *'
+      timezone: 'Europe/Berlin'
+    - cron: '45 18 * * *'
+      timezone: 'Europe/Berlin'
   pull_request:
 
 jobs:
