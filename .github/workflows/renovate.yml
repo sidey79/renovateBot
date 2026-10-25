@@ -1,6 +1,12 @@
 name: Renovate
 on:
   workflow_dispatch:
+    inputs:
+      repository:
+        description: 'Nur dieses Repository verarbeiten (owner/repo); leer = Autodiscovery'
+        required: false
+        type: string
+        default: ''
   schedule:
     - cron: '30 15 * * *'
       timezone: 'Europe/Berlin'
@@ -36,3 +42,8 @@ jobs:
           env-regex: "^(?:RENOVATE_\\w+|LOG_LEVEL)$"
         env:
           RENOVATE_DRY_RUN: ${{ github.event_name == 'pull_request' && 'full' || '' }}
+          # Bei manuellem Start mit 'repository' wird statt Autodiscovery nur
+          # dieses eine Repository verarbeitet. Leere Werte ignoriert Renovate,
+          # dann gilt weiter config.js (autodiscover: true).
+          RENOVATE_AUTODISCOVER: ${{ inputs.repository != '' && 'false' || '' }}
+          RENOVATE_REPOSITORIES: ${{ inputs.repository }}
