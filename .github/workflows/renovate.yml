@@ -37,7 +37,7 @@ jobs:
         id: get_token
         # Bei manuellem Start mit 'repository' nur der Job des Owners dieses
         # Repositories; die anderen Owner-Jobs werden uebersprungen.
-        if: ${{ inputs.repository == '' || startsWith(lower(inputs.repository), lower(format('{0}/', matrix.owner))) }}
+        if: ${{ inputs.repository == '' || startsWith(inputs.repository, format('{0}/', matrix.owner)) }}
         uses: actions/create-github-app-token@v3
         with:
           private-key: ${{ secrets.private_key }}
